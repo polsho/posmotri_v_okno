@@ -13,6 +13,7 @@ html {
   block-size: 100%;
   margin: auto;
   display: flex;
+  justify-content: center;
   align-items: center;
   color: #fff;
   font-family: 'Fira Sans Condensed', sans-serif;
@@ -103,7 +104,6 @@ ol {
 }
 
 .search-form {
-  /*width: fit-content;             Решить как и куда вставить*/
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -140,8 +140,13 @@ ol {
   outline: none;
 }
 
+.search-form__textfield:focus-visible {
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+}
+
 .search-form__textfield:active {
-  border: 1px solid #fff;
+  outline: 1px solid #fff;
 }
 
 .search-form__checkbox-list {
@@ -151,6 +156,7 @@ ol {
 }
 
 .search-form__label {
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -161,10 +167,19 @@ ol {
   text-decoration: underline;
 }
 
-.search-form__label:has(:focus-visible) {    /* Не работает в Mozilla*/
+.search-form__checkbox:focus-visible ~ .search-form__label-text::before {
+  content: "";
+  position: absolute;
+  inset: 0;
   outline: 1px solid #fff;
-  outline-offset: 2px;
+  outline-offset: 1px;
 }
+
+
+/* .search-form__label:has(:focus-visible) {    
+  outline: 1px solid #fff;
+  outline-offset: 1px;
+} */
 
 .search-form__pseudo-checkbox {
   position: relative;
