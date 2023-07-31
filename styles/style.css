@@ -121,6 +121,14 @@ ol {
   margin-block-end: 5px;
 }
 
+.search-form__label {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+
 .search-form__textfield {
   appearance: none;
   inline-size: 225px;
@@ -155,31 +163,21 @@ ol {
   gap: 15px;
 }
 
-.search-form__label {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
+.search-form__checkbox-list .search-form__label:has(:focus-visible) {
+  outline: 1px solid #FFF;
+  outline-offset: 1px;
 }
+
+@-moz-document url-prefix() {
+  .search-form__checkbox-list .search-form__label:focus-within {
+    outline: 1px solid #FFF;
+    outline-offset: 1px;
+  }
+} 
 
 .search-form__label:hover .search-form__label-text  {
   text-decoration: underline;
 }
-
-.search-form__checkbox:focus-visible ~ .search-form__label-text::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-}
-
-
-/* .search-form__label:has(:focus-visible) {    
-  outline: 1px solid #fff;
-  outline-offset: 1px;
-} */
 
 .search-form__pseudo-checkbox {
   position: relative;
@@ -233,6 +231,10 @@ ol {
   min-inline-size: 416px;
   block-size: 298px;
   overflow-y: scroll;
+}
+
+.content__list:-moz-focusring {
+  outline: none;
 }
 
 .content__list-item:not(:last-child) {
