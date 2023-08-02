@@ -239,7 +239,7 @@ ol {
 }
 
 .content__list-item:not(:last-child) {
-  margin-block-end: 34px;
+  margin-block-end: 30px;
 }
 
 .content__card-link {
@@ -273,7 +273,6 @@ ol {
 .content__video-card {
   display: grid;
   grid-template-columns: 1fr 194px;
-  min-block-size: 103px;
   align-items: start;
 }
 
@@ -299,7 +298,7 @@ ol {
 
 .content__video-card-thumbnail {
   inline-size: 100%;
-  block-size: 100%;
+  block-size: 103px;
   object-fit: cover;
   object-position: center;
 }
